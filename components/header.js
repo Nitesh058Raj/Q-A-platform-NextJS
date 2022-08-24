@@ -13,7 +13,7 @@ export default function Sidebar() {
         <li>
         <div className={styles.Link}> <Link href="/contectus"> Contect Us</Link></div>
         </li>
-        
+  
       </ul>
     </nav>
   )

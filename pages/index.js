@@ -2,9 +2,8 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import Layout from '../components/layout'
-import Header from '../components/header'
 import Footer from '../components/footer'
-import Nav from '../components/main-navigation'
+import NavBar from '../components/main-navigation'
 
 export default function Index() {
   return (
@@ -15,8 +14,9 @@ export default function Index() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      {/* <Header /> */}
-      <Nav />
+
+     
+      <NavBar />
       <Layout />
       <Footer />
     </div>

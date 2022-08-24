@@ -1,10 +1,12 @@
 import Link from 'next/link';
+import { Fragment } from 'react';
 
 import Logo from './logo';
 import classes from './main-navigation.module.css';
 
 function MainNavigation() {
   return (
+    <Fragment>
     <header className={classes.header}>
       <Link href='/'>
         <a>
@@ -22,6 +24,7 @@ function MainNavigation() {
         </ul>
       </nav>
     </header>
+    </Fragment>
   );
 }
 
