@@ -9,6 +9,8 @@ import data from '../data.json'
 
 const info = data.Experiences;
 
+// feach data here with serverside fetching 
+
 export default function Posts() {
     return (
       <div className={styles.container}>
@@ -23,7 +25,7 @@ export default function Posts() {
         <NavBar />
         <Layout />
         <h1>Posts</h1>
-
+        {/* Reprent data here with the bookmark page : golangprogramin.com/somthing */}
         <ul>
             {info.map(s => (<li>{s}</li>))}
         </ul>
