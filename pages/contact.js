@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
-import Layout from '../components/layout'
+// import Contact from '../components/contact'
 import Footer from '../components/footer'
 import NavBar from '../components/main-navigation'
 
@@ -17,7 +17,7 @@ export default function Contact() {
   
        
         <NavBar />
-        <Layout />
+        {/* <Contact /> */}
         <h1>Contact</h1>
         <Footer />
       </div>

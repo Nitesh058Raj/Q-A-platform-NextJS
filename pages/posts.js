@@ -5,6 +5,10 @@ import Layout from '../components/layout'
 import Footer from '../components/footer'
 import NavBar from '../components/main-navigation'
 
+import data from '../data.json'
+
+const info = data.Experiences;
+
 export default function Posts() {
     return (
       <div className={styles.container}>
@@ -19,6 +23,11 @@ export default function Posts() {
         <NavBar />
         <Layout />
         <h1>Posts</h1>
+
+        <ul>
+            {info.map(s => (<li>{s}</li>))}
+        </ul>
+
         <Footer />
       </div>
     )
