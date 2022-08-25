@@ -26,13 +26,16 @@ export default function Posts({data}) {
         <Layout />
         <h1>Posts</h1>
         <h1>{data.Quser}</h1>
-        
+
         <Footer />
       </div>
     )
   }
   
   export async function getServerSideProps() {
+
+    //HTML is generated at server than send to client
+
     // Fetch data from external API
     const res = await fetch(`https://thpc8fu9m6.execute-api.ap-south-1.amazonaws.com/dev/users/NitEsh`)
     const data = await res.json()
