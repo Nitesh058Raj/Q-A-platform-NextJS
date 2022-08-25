@@ -5,7 +5,6 @@ html {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
-
 body {
   --color-grey-50: hsl(265, 55%, 96%);
   --color-grey-100: hsl(265, 19%, 88%);
@@ -17,7 +16,6 @@ body {
   --color-grey-700: hsl(265, 4%, 31%);
   --color-grey-800: hsl(276, 5%, 20%);
   --color-grey-900: hsl(280, 5%, 13%);
-
 
   --color-primary-50: #c8b3ce;
   --color-primary-100: #a07aaa;
@@ -48,22 +46,19 @@ body {
   margin: 0;
   background-color: var(--color-grey-500);
   color: #252525;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
-
 
 button {
   font: inherit;
   cursor: pointer;
 }
 
-
 h1,
 h2,
 h3 {
-  font-family: 'Oswald', 'Roboto', sans-serif;
+  font-family: "Oswald", "Roboto", sans-serif;
 }
-
 
 a {
   color: inherit;
