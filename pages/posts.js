@@ -4,14 +4,14 @@ import styles from '../styles/Home.module.css'
 import Layout from '../components/layout'
 import Footer from '../components/footer'
 import NavBar from '../components/main-navigation'
+import useSWR from 'swr'
 
-import data from '../data.json'
+//Testing local json data
+// import data from '../data.json'
+// const info = data.Experiences;
 
-const info = data.Experiences;
 
-// feach data here with serverside fetching 
-
-export default function Posts() {
+export default function Posts({data}) {
     return (
       <div className={styles.container}>
         <Head>
@@ -25,14 +25,22 @@ export default function Posts() {
         <NavBar />
         <Layout />
         <h1>Posts</h1>
-        {/* Reprent data here with the bookmark page : golangprogramin.com/somthing */}
-        <ul>
-            {info.map(s => (<li>{s}</li>))}
-        </ul>
-
+        <h1>{data.Quser}</h1>
+        
         <Footer />
       </div>
     )
+  }
+  
+  export async function getServerSideProps() {
+    // Fetch data from external API
+    const res = await fetch(`https://thpc8fu9m6.execute-api.ap-south-1.amazonaws.com/dev/users/NitEsh`)
+    const data = await res.json()
+    console.log(data)
+    // Pass data to the page via props
+    return { props: {
+      data: data,
+    }  }
   }
   
   
