@@ -1,0 +1,11 @@
+.container {
+    padding: 0 2rem;
+  }
+
+  .box {
+    margin-top: 2%;
+    margin-left: 5%;
+    padding-left: 5% ;
+    width: 70%;
+    border : 10px solid cornflowerblue;
+  }

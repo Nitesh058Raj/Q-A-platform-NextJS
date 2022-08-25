@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
-import styles from "../styles/Home.module.css";
+import styles from "../styles/Posts.module.css";
 import Layout from "../components/layout";
 import Footer from "../components/footer";
 import NavBar from "../components/main-navigation";
@@ -27,9 +27,9 @@ export default function Posts({ data }) {
 
       {data.Items.map(function (item, i) {
         return (
-          <div key={i}>
-            <h1>{item.Quser}</h1>
-            <h2>{item.createdAt}</h2>
+          <div className={styles.box} key={i}>
+            <h3>{item.Quser}</h3>
+            <p>{item.createdAt}</p>
           </div>
         );
       })}
