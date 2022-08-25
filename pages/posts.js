@@ -10,7 +10,7 @@ import useSWR from 'swr'
 // import data from '../data.json'
 // const info = data.Experiences;
 
-
+//{data} == props <-- get from getserverSideProps function 
 export default function Posts({data}) {
     return (
       <div className={styles.container}>
@@ -27,6 +27,19 @@ export default function Posts({data}) {
         <h1>Posts</h1>
         <h1>{data.Quser}</h1>
 
+        {
+          data.Items.map(function (item, i) {
+            return(
+              <div key = {i}>
+                <h1>{item.Quser}</h1>
+                <h2>{item.createdAt}</h2>
+
+              </div>
+            );
+          })
+
+        }
+
         <Footer />
       </div>
     )
@@ -37,7 +50,7 @@ export default function Posts({data}) {
     //HTML is generated at server than send to client
 
     // Fetch data from external API
-    const res = await fetch(`https://thpc8fu9m6.execute-api.ap-south-1.amazonaws.com/dev/users/NitEsh`)
+    const res = await fetch(`https://thpc8fu9m6.execute-api.ap-south-1.amazonaws.com/dev/all`)
     const data = await res.json()
     console.log(data)
     // Pass data to the page via props
