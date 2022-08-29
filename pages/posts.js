@@ -1,7 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Posts.module.css";
-import Layout from "../components/Extra Components/layout";
 import Footer from "../components/footer";
 import NavBar from "../components/main-navigation";
 
@@ -22,7 +21,6 @@ export default function Posts({ data }) {
       </Head>
 
       <NavBar />
-      <Layout />
       <h1 className={styles.p}>Questions</h1>
       <h1>{data.Quser}</h1>
 
