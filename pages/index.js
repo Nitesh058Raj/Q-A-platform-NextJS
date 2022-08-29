@@ -1,7 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
-import Layout from "../components/layout";
 import Footer from "../components/footer";
 import NavBar from "../components/main-navigation";
 
@@ -15,7 +14,6 @@ export default function Index() {
       </Head>
 
       <NavBar />
-      <Layout />
       <Footer />
     </div>
   );
