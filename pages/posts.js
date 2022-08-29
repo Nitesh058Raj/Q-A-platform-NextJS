@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Posts.module.css";
-import Layout from "../components/layout";
+import Layout from "../components/Extra Components/layout";
 import Footer from "../components/footer";
 import NavBar from "../components/main-navigation";
 
