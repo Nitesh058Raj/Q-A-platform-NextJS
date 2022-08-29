@@ -4,8 +4,9 @@ import styles from "../styles/Posts.module.css";
 import Layout from "../components/layout";
 import Footer from "../components/footer";
 import NavBar from "../components/main-navigation";
-import useSWR from "swr";
 
+
+// import useSWR from "swr";
 // Testing local json data
 // import data from '../data.json'
 // const info = data.Experiences;
@@ -15,7 +16,7 @@ export default function Posts({ data }) {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Posts</title>
+        <title>Questions</title>
         <meta name="description" content="Posts --> All Quetions" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
