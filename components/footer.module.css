@@ -2,15 +2,20 @@
   color: white;
 }
 
+.p{
+  color: white;
+  align-content: center;
+}
+
 .contain {
   margin: 0;
-  box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.4);
+  box-shadow: -5px -5px 7px rgba(0, 0, 0, 0.4);
   padding: 0 10%;
   background-color: var(--color-grey-900);
-  height: 100px;
-  align-items: center;
+  height: 15%;
   align-content: center;
   border: solid;
   text-align: center;
-  margin-top: 5px;
+  margin-top: 2rem;
+  margin-bottom: 15px;
 }

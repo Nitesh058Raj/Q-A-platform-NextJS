@@ -5,6 +5,31 @@ import Footer from "../components/footer";
 import NavBar from "../components/main-navigation";
 
 export default function Ask() {
+  const sendMessage = async (event) => {
+    event.preventDefault();
+
+    const res = await fetch(
+      "https://thpc8fu9m6.execute-api.ap-south-1.amazonaws.com/dev/users",
+      {
+        body: JSON.stringify({
+          Quser: event.target.Quser.value,
+          Qdetail: event.target.Qdetail.value,
+          Question: event.target.Question.value,
+        }),
+        headers: {
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Methods": "*",
+          "Access-Control-Allow-Origin": "*",
+        },
+        method: "POST",
+      }
+    );
+
+    const result = await res.json();
+    console.log(result);
+    alert("Done !!!");
+  };
+
   return (
     <div className={styles.container}>
       <Head>
@@ -14,7 +39,42 @@ export default function Ask() {
       </Head>
 
       <NavBar />
-      <h1>Create Question</h1>
+      <div className={styles.grid}>
+        <form onSubmit={sendMessage}>
+            <h1 className={styles.h1text}>Create Question</h1>
+          <label htmlFor="Quser">User Name: </label>
+          <input
+            className={styles.input_box}
+            id="Quser"
+            name="Quser"
+            type="text"
+            autoComplete="from"
+            required
+          />
+          <label htmlFor="Question">Question: </label>
+          <input
+            className={styles.input_box}
+            id="Question"
+            name="Question"
+            type="text"
+            autoComplete="from"
+            required
+          />
+          <label htmlFor="Quetion_details">Quetion details: </label>
+          <textarea
+            className={styles.text_box}
+            id="Qdetail"
+            name="Qdetail"
+            type="text"
+            autoComplete="from"
+            required
+          />
+
+          <button type="submit" className={styles.subbtn}>
+            Send
+          </button>
+        </form>
+      </div>
       <Footer />
     </div>
   );
