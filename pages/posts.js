@@ -3,6 +3,8 @@ import Image from "next/image";
 import styles from "../styles/Posts.module.css";
 import Footer from "../components/footer";
 import NavBar from "../components/main-navigation";
+import Link from "next/link";
+// import { useRouter } from "next/router";
 
 // import useSWR from "swr";
 // Testing local json data
@@ -11,10 +13,10 @@ import NavBar from "../components/main-navigation";
 
 //{data} == props <-- get from getserverSideProps() function
 export default function Posts({ data }) {
-  
   const answerQuestion = async (event) => {
     event.preventDefault();
   };
+  // const router = useRouter();
 
   return (
     <div className={styles.container}>
@@ -31,14 +33,18 @@ export default function Posts({ data }) {
       {data.Items.map(function (item, i) {
         return (
           <div className={styles.box} key={i} onClick={answerQuestion}>
-            <b className={styles.p}>{item.Qtitle}</b>
-            <p className={styles.p}>
-              Ask By : {item.Quser}{" "}
-              <div className={styles.p2}>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Created At :{" "}
-                {item.createdAt}
+            <Link href="/blog/[id]" as={"/blog/" + item.Quuid}>
+              <div>
+                <b className={styles.p}>{item.Qtitle}</b>
+                <div className={styles.p}>
+                  Ask By : {item.Quser}{" "}
+                  <div className={styles.p2}>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Created At :{" "}
+                    {item.createdAt}
+                  </div>
+                </div>
               </div>
-            </p>
+            </Link>
           </div>
         );
       })}
