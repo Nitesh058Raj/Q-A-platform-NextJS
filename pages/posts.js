@@ -4,7 +4,6 @@ import styles from "../styles/Posts.module.css";
 import Footer from "../components/footer";
 import NavBar from "../components/main-navigation";
 
-
 // import useSWR from "swr";
 // Testing local json data
 // import data from '../data.json'
@@ -12,6 +11,11 @@ import NavBar from "../components/main-navigation";
 
 //{data} == props <-- get from getserverSideProps() function
 export default function Posts({ data }) {
+  
+  const answerQuestion = async (event) => {
+    event.preventDefault();
+  };
+
   return (
     <div className={styles.container}>
       <Head>
@@ -26,9 +30,15 @@ export default function Posts({ data }) {
 
       {data.Items.map(function (item, i) {
         return (
-          <div className={styles.box} key={i}>
-            <h3 className={styles.p}>{item.Quser}</h3>
-            <p className={styles.p}>{item.createdAt}</p>
+          <div className={styles.box} key={i} onClick={answerQuestion}>
+            <b className={styles.p}>{item.Qtitle}</b>
+            <p className={styles.p}>
+              Ask By : {item.Quser}{" "}
+              <div className={styles.p2}>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Created At :{" "}
+                {item.createdAt}
+              </div>
+            </p>
           </div>
         );
       })}

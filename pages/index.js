@@ -14,6 +14,7 @@ export default function Index() {
       </Head>
 
       <NavBar />
+      <h1> Index Page</h1>
       <Footer />
     </div>
   );

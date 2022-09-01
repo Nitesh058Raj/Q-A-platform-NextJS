@@ -17,6 +17,7 @@ export default function ContactUs() {
       <NavBar />
       {/* <Contact /> */}
       <h1>Contact Us</h1>
+      
       <Footer />
     </div>
   );
