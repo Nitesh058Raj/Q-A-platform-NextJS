@@ -10,9 +10,13 @@ export default function Answer({ data }) {
     event.preventDefault();
     // console.log(event.target.Ansuser.value);
     // console.log(data.Quser);
-    const res = await fetch("api", {
+    const url = "https://thpc8fu9m6.execute-api.ap-south-1.amazonaws.com/dev/updateuser/" + data.Quser;
+    const res = await fetch(url, {
       body: JSON.stringify({
-        Quuid: data.Quuid,
+        Quser: data.Quser,
+        Qtitle: data.Qtitle,
+        createdAt: data.createdAt,
+        Qdetails: data.Qdetails,
         Ansuser: event.target.Ansuser.value,
         Answer: event.target.Answer.value,
       }),
@@ -97,7 +101,7 @@ export default function Answer({ data }) {
           <ConditionalWrapper condition={data.checked == 0}>
             <div>
               <b>Answer : </b>
-              {data.answer}{" "}
+              {data.Answer}{" "}
             </div>
             <div>
               <b>Answer Given By :</b> {data.Ansuser}

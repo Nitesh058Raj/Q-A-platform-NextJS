@@ -13,9 +13,6 @@ import Link from "next/link";
 
 //{data} == props <-- get from getserverSideProps() function
 export default function Posts({ data }) {
-  const answerQuestion = async (event) => {
-    event.preventDefault();
-  };
   // const router = useRouter();
 
   return (
@@ -32,8 +29,8 @@ export default function Posts({ data }) {
 
       {data.Items.map(function (item, i) {
         return (
-          <div className={styles.box} key={i} onClick={answerQuestion}>
-            <Link href="/blog/[id]" as={"/blog/" + item.Quuid}>
+          <div className={styles.box} key={i} >
+            <Link href="/blog/[id]" as={"/blog/" + item.Quser}>
               <div>
                 <b className={styles.p}>{item.Qtitle}</b>
                 <div className={styles.p}>
