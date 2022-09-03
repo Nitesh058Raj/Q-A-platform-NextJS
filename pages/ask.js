@@ -9,7 +9,7 @@ export default function Ask() {
     event.preventDefault();
 
     const res = await fetch(
-      "https://thpc8fu9m6.execute-api.ap-south-1.amazonaws.com/dev/users",
+      "api",
       {
         body: JSON.stringify({
           Quser: event.target.Quser.value,

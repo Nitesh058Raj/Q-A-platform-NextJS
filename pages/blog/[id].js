@@ -8,11 +8,10 @@ import { Fragment } from "react";
 export default function Answer({ data }) {
   const sendAnswer = async (event) => {
     event.preventDefault();
-    // console.log(event.target.Ansuser.value);
-    // console.log(data.Quser);
-    const url = "https://thpc8fu9m6.execute-api.ap-south-1.amazonaws.com/dev/updateuser/" + data.Quser;
+    const url = "api" + data.Qid;
     const res = await fetch(url, {
       body: JSON.stringify({
+        Qid: data.Qid,
         Quser: data.Quser,
         Qtitle: data.Qtitle,
         createdAt: data.createdAt,
@@ -115,13 +114,12 @@ export default function Answer({ data }) {
 }
 
 export async function getServerSideProps(content) {
+
   //HTML is generated at server then send to client-side
-  // const router = useRouter();
   const slug = content.query.id;
-  console.log("Slug : " + slug);
   // Fetch data from external API
   const res = await fetch(
-    `https://thpc8fu9m6.execute-api.ap-south-1.amazonaws.com/dev/users/${slug}`
+    `api/${slug}`
   );
   const data = await res.json();
   console.log(data);

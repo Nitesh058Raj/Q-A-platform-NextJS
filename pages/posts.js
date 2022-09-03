@@ -4,17 +4,15 @@ import styles from "../styles/Posts.module.css";
 import Footer from "../components/footer";
 import NavBar from "../components/main-navigation";
 import Link from "next/link";
-// import { useRouter } from "next/router";
 
-// import useSWR from "swr";
+
 // Testing local json data
 // import data from '../data.json'
 // const info = data.Experiences;
 
 //{data} == props <-- get from getserverSideProps() function
 export default function Posts({ data }) {
-  // const router = useRouter();
-
+ 
   return (
     <div className={styles.container}>
       <Head>
@@ -30,7 +28,7 @@ export default function Posts({ data }) {
       {data.Items.map(function (item, i) {
         return (
           <div className={styles.box} key={i} >
-            <Link href="/blog/[id]" as={"/blog/" + item.Quser}>
+            <Link href="/blog/[id]" as={"/blog/" + item.Qid}>
               <div>
                 <b className={styles.p}>{item.Qtitle}</b>
                 <div className={styles.p}>
@@ -56,7 +54,7 @@ export async function getServerSideProps() {
 
   // Fetch data from external API
   const res = await fetch(
-    `https://thpc8fu9m6.execute-api.ap-south-1.amazonaws.com/dev/all`
+    `api`
   );
   const data = await res.json();
   console.log(data);
