@@ -54,7 +54,7 @@ export async function getServerSideProps() {
 
   // Fetch data from external API
   const res = await fetch(
-    `api`
+    `https://ropg5ca159.execute-api.ap-south-1.amazonaws.com/dev/all`
   );
   const data = await res.json();
   console.log(data);

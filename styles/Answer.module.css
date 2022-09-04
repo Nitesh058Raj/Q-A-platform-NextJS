@@ -54,6 +54,7 @@
   display: flex;
   flex-wrap: wrap;
   padding-left: 4rem;
+  padding-bottom: 2rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
   background: var(--color-grey-400);

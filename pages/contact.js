@@ -5,6 +5,8 @@ import styles from "../styles/ContactUs.module.css";
 import Footer from "../components/footer";
 import NavBar from "../components/main-navigation";
 
+
+// I am too lazy to do this part ;)
 export default function ContactUs() {
   return (
     <div className={styles.container}>
@@ -16,7 +18,7 @@ export default function ContactUs() {
 
       <NavBar />
       {/* <Contact /> */}
-      <h1>Contact Us</h1>
+      <h1>About Us</h1>
       
       <Footer />
     </div>

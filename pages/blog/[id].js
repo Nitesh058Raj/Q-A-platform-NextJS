@@ -8,7 +8,7 @@ import { Fragment } from "react";
 export default function Answer({ data }) {
   const sendAnswer = async (event) => {
     event.preventDefault();
-    const url = "api" + data.Qid;
+    const url = "https://ropg5ca159.execute-api.ap-south-1.amazonaws.com/dev/answerquestion/" + data.Qid;
     const res = await fetch(url, {
       body: JSON.stringify({
         Qid: data.Qid,
@@ -119,7 +119,7 @@ export async function getServerSideProps(content) {
   const slug = content.query.id;
   // Fetch data from external API
   const res = await fetch(
-    `api/${slug}`
+    `https://ropg5ca159.execute-api.ap-south-1.amazonaws.com/dev/question/${slug}`
   );
   const data = await res.json();
   console.log(data);

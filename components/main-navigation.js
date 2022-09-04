@@ -21,9 +21,9 @@ function MainNavigation() {
             <li>
               <Link href="/ask">Ask Question</Link>
             </li>
-            <li>
+            {/* <li>
               <Link href="/contact">Contact Us</Link>
-            </li>
+            </li> */}
           </ul>
         </nav>
       </header>

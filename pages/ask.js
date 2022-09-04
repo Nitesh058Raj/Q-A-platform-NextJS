@@ -9,12 +9,13 @@ export default function Ask() {
     event.preventDefault();
 
     const res = await fetch(
-      "api",
+      "https://ropg5ca159.execute-api.ap-south-1.amazonaws.com/dev/questions",
       {
         body: JSON.stringify({
           Quser: event.target.Quser.value,
           Qdetail: event.target.Qdetail.value,
           Question: event.target.Question.value,
+          mail: event.target.mail.value,
         }),
         headers: {
           "Content-Type": "application/json",
@@ -51,6 +52,16 @@ export default function Ask() {
             autoComplete="from"
             required
           />
+          <label htmlFor="mail">EMail : </label>
+          <input
+            className={styles.input_box}
+            id="mail"
+            name="mail"
+            type="text"
+            autoComplete="from"
+            required
+          />
+
           <label htmlFor="Question">Question: </label>
           <input
             className={styles.input_box}
