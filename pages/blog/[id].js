@@ -4,11 +4,13 @@ import styles from "../../styles/Answer.module.css";
 import Footer from "../../components/footer";
 import NavBar from "../../components/main-navigation";
 import { Fragment } from "react";
+import { API } from "../api/apis";
 
 export default function Answer({ data }) {
   const sendAnswer = async (event) => {
     event.preventDefault();
-    const url = "https://ropg5ca159.execute-api.ap-south-1.amazonaws.com/dev/answerquestion/" + data.Qid;
+    const url = API.ANSWER  + data.Qid;
+    
     const res = await fetch(url, {
       body: JSON.stringify({
         Qid: data.Qid,
@@ -71,7 +73,7 @@ export default function Answer({ data }) {
       <Head>
         <title>Ask</title>
         <meta name="description" content="Answer Question" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/qada.png" />
       </Head>
 
       <NavBar />

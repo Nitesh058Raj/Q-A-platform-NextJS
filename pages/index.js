@@ -8,7 +8,7 @@ export default function Index() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Create Next App</title>
+        <title> Q and A Plateform</title>
         <meta name="description" content="Index Page for Q and a Plateform" />
         <link rel="icon" href="/qanda.png" />
       </Head>

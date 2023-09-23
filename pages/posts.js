@@ -4,6 +4,7 @@ import styles from "../styles/Posts.module.css";
 import Footer from "../components/footer";
 import NavBar from "../components/main-navigation";
 import Link from "next/link";
+import { API } from "./api/apis";
 
 
 // Testing local json data
@@ -12,13 +13,13 @@ import Link from "next/link";
 
 //{data} == props <-- get from getserverSideProps() function
 export default function Posts({ data }) {
- 
+
   return (
     <div className={styles.container}>
       <Head>
         <title>Questions</title>
         <meta name="description" content="Posts --> All Quetions" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/qada.png" />
       </Head>
 
       <NavBar />
@@ -53,9 +54,7 @@ export async function getServerSideProps() {
   //HTML is generated at server then send to client-side
 
   // Fetch data from external API
-  const res = await fetch(
-    `https://ropg5ca159.execute-api.ap-south-1.amazonaws.com/dev/all`
-  );
+  const res = await fetch(API.POST);
   const data = await res.json();
   console.log(data);
   // Pass data to the page via props

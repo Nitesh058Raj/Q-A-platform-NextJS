@@ -3,13 +3,14 @@ import Image from "next/image";
 import styles from "../styles/Ask.module.css";
 import Footer from "../components/footer";
 import NavBar from "../components/main-navigation";
+import { API } from "./api/apis";
 
 export default function Ask() {
   const sendMessage = async (event) => {
     event.preventDefault();
 
     const res = await fetch(
-      "https://ropg5ca159.execute-api.ap-south-1.amazonaws.com/dev/questions",
+      API.ASK_QUESTION,
       {
         body: JSON.stringify({
           Quser: event.target.Quser.value,
@@ -36,7 +37,7 @@ export default function Ask() {
       <Head>
         <title>Ask</title>
         <meta name="description" content="Ask Question" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/qada.png" />
       </Head>
 
       <NavBar />
